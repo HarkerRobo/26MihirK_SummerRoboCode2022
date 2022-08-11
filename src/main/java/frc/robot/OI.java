@@ -3,7 +3,6 @@ package frc.robot;
 import frc.robot.commands.ToggleExtender;
 import frc.robot.commands.ToggleFlower;
 import frc.robot.commands.ToggleIntake;
-import frc.robot.subsystems.Intake;
 import harkerrobolib.wrappers.XboxGamepad;
 
 public class OI {
