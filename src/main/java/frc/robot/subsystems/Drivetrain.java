@@ -12,13 +12,13 @@ public class Drivetrain extends SubsystemBase{
     private HSTalon rightMaster;
     private VictorSPX leftFollower;
     private VictorSPX rightFollower;
-    private static final int LEFT_MASTER_ID = 0;
-    private static final int RIGHT_MASTER_ID = 0;
-    private static final int LEFT_FOLLOWER_ID = 0;
-    private static final int RIGHT_FOLLOWER_ID = 0;
-    private static final boolean LEFT_MASTER_INVERTED = false;
+    private static final int LEFT_MASTER_ID = 4;
+    private static final int RIGHT_MASTER_ID = 1;
+    private static final int LEFT_FOLLOWER_ID = 4;
+    private static final int RIGHT_FOLLOWER_ID = 1;
+    private static final boolean LEFT_MASTER_INVERTED = true;
     private static final boolean RIGHT_MASTER_INVERTED = false;
-    private static final boolean LEFT_FOLLOWER_INVERTED = false;
+    private static final boolean LEFT_FOLLOWER_INVERTED = true;
     private static final boolean RIGHT_FOLLOWER_INVERTED = false;
 
 
