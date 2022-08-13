@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.ArcadeDriveManual;
 import frc.robot.commands.ElevatorManual;
 import frc.robot.commands.IntakeManual;
@@ -28,13 +29,15 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     Drivetrain.getInstance().setDefaultCommand(new ArcadeDriveManual());
-    Intake.getInstance().setDefaultCommand(new IntakeManual());
-    Wrist.getInstance().setDefaultCommand(new WristManual());
+    //Intake.getInstance().setDefaultCommand(new IntakeManual());
+    //Wrist.getInstance().setDefaultCommand(new WristManual());
     Elevator.getInstance().setDefaultCommand(new ElevatorManual());
   }
 
   @Override
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+    CommandScheduler.getInstance().run();
+  }
 
   @Override
   public void autonomousInit() {}

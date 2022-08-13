@@ -12,7 +12,7 @@ public class ElevatorManual extends IndefiniteCommand
 
     public void execute()
     { 
-        Elevator.getInstance().setPercentageOutput(Math.max(OI.getInstance().getDriver().getRightY(), 0.1));
+        Elevator.getInstance().setPercentageOutput(Math.max(OI.getInstance().getDriver().getRightY(), 0.2));
     }
 
     public void end(boolean interrupted)
