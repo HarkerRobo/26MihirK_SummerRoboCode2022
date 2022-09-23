@@ -1,13 +1,17 @@
+import edu.wpi.first.gradlerio.deploy.roborio.RoboRIO
+
 plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2022.4.1"
 }
 
+repositories {
+	maven { url 'https://jitpack.io' }
+}
+
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
-repositories {
-    maven { url 'https://jitpack.io' }
-}
+
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
@@ -50,9 +54,11 @@ def includeDesktopSupport = false
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
 // Also defines JUnit 4.
 dependencies {
-    implementation 'com.github.HarkerRobo:HarkerRoboLib:-SNAPSHOT'
+
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
+
+	implementation 'com.github.HarkerRobo:HarkerRoboLib:b3049cef50'
 
     roborioDebug wpi.java.deps.wpilibJniDebug(wpi.platforms.roborio)
     roborioDebug wpi.java.vendor.jniDebug(wpi.platforms.roborio)
@@ -68,7 +74,7 @@ dependencies {
     nativeRelease wpi.java.vendor.jniRelease(wpi.platforms.desktop)
     simulationRelease wpi.sim.enableRelease()
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.12'
 }
 
 // Simulation configuration (e.g. environment variables).
